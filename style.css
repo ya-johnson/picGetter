@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;700&display=swap');
+
+:root {
+
+  --white: #f8f9fa;
+  --toned-white: #e9ecef;
+  --very-light-grey: #dee2e6;
+  --light-grey: #ced4da;
+  --grey: #adb5bd;
+  --dark-grey: #6c757d;
+  --very-dark-grey: #495057;
+  --toned-black: #343a40;
+  --black: #212529;
+
+  --dark-accent: #ea698b;
+  --light-accent: #00b4d8;
+
+  --sun: url(/images/icon-sun.svg);
+  --moon: url(/images/icon-moon.svg);
+
+}
+
+.dark {
+  --fg: var(--toned-black);
+  --bg: var(--very-dark-grey);
+  --btn: var(--grey);
+  --color: var(--white);
+  --accent: var(--dark-accent);
+  --icon: var(--sun);
+}
+
+.light {
+  --fg: var(--very-light-grey);
+  --bg: var(--white);
+  --btn: var(--grey);
+  --color: var(--black);
+  --accent: var(--light-accent);
+  --icon: var(--moon);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: all ease-out .35s;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: var(--color);
+  background-color: var(--bg);
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 12.5px 0;
+  border-bottom: 2px solid var(--black);
+  background-color: var(--fg);
+  z-index: 8;
+}
+
+.nav > .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container:hover .squre {
+  border: 2px solid var(--accent);
+}
+
+.logo-container:hover .logo {
+  color: var(--accent);
+}
+
+.squre {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--color);
+  margin-right: 12px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color);
+}
+
+.theme {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  background-image: var(--icon);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 30%;
+}
+
+.input {
+  width: 100%;
+  color: var(--color);
+  text-align: center;
+  padding: 6px;
+  border: none;
+  outline: none;
+  background-color: var(--bg);
+}
+
+.btn-submit {
+  cursor: pointer;
+  padding: 0 8px;
+  border: none;
+  border-radius: 0;
+  background-color: var(--btn);
+}
+
+.btn-submit:hover {
+  background-color: var(--accent);
+}
+
+.pics-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 50px 20px;
+}
+
+.card {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 20px 3px var(--black);
+}
+
+.card img {
+  height: 100%;
+  width: 100%;
+}
+
+.pic-links {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.card:hover .pic-links {
+  bottom: 20px;
+}
+
+.pic-links a {
+  color: var(--color);
+  padding: 8px;
+  border: 2px solid var(--black);
+  border-radius: 5px;
+  background-color: var(--fg);
+}
+
+.pic-links a:hover {
+  background-color: var(--accent);
+}
+
+@media only screen and (max-width: 992px) {
+
+  .nav {
+    height: 66px;
+  }
+
+  .form {
+    top: 69.5px;
+    width: 100%;
+    background-color: var(--bg);
+  }
+
+  .input {
+    border-bottom: 2px solid var(--black);
+    background-color: var(--fg);
+  }
+
+  .btn-submit {
+    border-left: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+  }
+
+  .pics-container {
+    margin-top: 50px;
+  }
+
+  .card {
+    height: 340px;
+    width: 340px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .card {
+    height: 450px;
+    width: 450px;
+  }
+
+  .card img {
+    height: 450px;
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+
+  .card {
+    height: 340px;
+    width: 340px;
+  }
+
+  .card img {
+    height: 340px;
+    width: 340px;
+  }
+}
